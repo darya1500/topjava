@@ -44,8 +44,8 @@ public class InMemoryAdminRestControllerTest {
         Assert.assertNull(repository.get(USER_ID));
     }
 
-    @Test
+    @Test(expected = NotFoundException.class)
     public void deleteNotFound() throws Exception {
-        Assert.assertThrows(NotFoundException.class, () -> controller.delete(10));
+        controller.delete(10);
     }
 }
