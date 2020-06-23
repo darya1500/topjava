@@ -8,26 +8,11 @@ import ru.javawebinar.topjava.repository.UserRepository;
 import java.util.Collections;
 import java.util.List;
 
-public class InMemoryUserRepository implements UserRepository {
-    private static final Logger log = LoggerFactory.getLogger(InMemoryUserRepository.class);
+@Repository
+public class InMemoryUserRepository extends InMemoryBaseRepository<User> implements UserRepository {
 
-    @Override
-    public boolean delete(int id) {
-        log.info("delete {}", id);
-        return true;
-    }
-
-    @Override
-    public User save(User user) {
-        log.info("save {}", user);
-        return user;
-    }
-
-    @Override
-    public User get(int id) {
-        log.info("get {}", id);
-        return null;
-    }
+    static final int USER_ID = 1;
+    static final int ADMIN_ID = 2;
 
     @Override
     public List<User> getAll() {
