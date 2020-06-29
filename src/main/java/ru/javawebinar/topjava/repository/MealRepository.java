@@ -4,6 +4,7 @@ import ru.javawebinar.topjava.model.Meal;
 import java.time.LocalDateTime;
 import java.util.List;
 
+//dao
 public interface MealRepository {
     // null if not found, when updated
     Meal save(Meal meal);

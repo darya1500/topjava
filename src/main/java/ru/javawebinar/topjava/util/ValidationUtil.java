@@ -3,6 +3,8 @@ package ru.javawebinar.topjava.util;
 import ru.javawebinar.topjava.model.AbstractBaseEntity;
 import ru.javawebinar.topjava.util.exception.NotFoundException;
 
+//проверка результатов, формирует Exception в сообщении
+//валидация входящих данных
 public class ValidationUtil {
 
     public static <T> T checkNotFoundWithId(T object, int id) {
@@ -31,6 +33,7 @@ public class ValidationUtil {
         }
     }
 
+    //id или 0, или должен совпадать с параметром
     public static void assureIdConsistent(AbstractBaseEntity entity, int id) {
 //      conservative when you reply, but accept liberally (http://stackoverflow.com/a/32728226/548473)
         if (entity.isNew()) {

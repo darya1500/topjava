@@ -4,6 +4,7 @@ import ru.javawebinar.topjava.model.User;
 
 import java.util.List;
 
+//работа с юзерами, не бросать exception в репозитории
 public interface UserRepository {
     // null if not found, when updated
     User save(User user);

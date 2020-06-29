@@ -5,6 +5,7 @@ import ru.javawebinar.topjava.model.User;
 
 import static ru.javawebinar.topjava.web.SecurityUtil.authUserId;
 
+//пользователь может модифицировать свои данные
 @Controller
 public class ProfileRestController extends AbstractUserController {
 

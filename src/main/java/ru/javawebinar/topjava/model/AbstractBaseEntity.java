@@ -1,5 +1,6 @@
 package ru.javawebinar.topjava.model;
 
+//хранить primary key
 public abstract class AbstractBaseEntity {
     public static final int START_SEQ = 100000;
 
@@ -20,6 +21,7 @@ public abstract class AbstractBaseEntity {
         return id;
     }
 
+    //новый объект, не хранится еще нигде
     public boolean isNew() {
         return this.id == null;
     }

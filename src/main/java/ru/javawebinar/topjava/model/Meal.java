@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+//model-объекты, с которыми работает приложение пока они находятся в памяти,
+//затем мы их будем хранить в БД
 public class Meal extends AbstractBaseEntity {
     private final LocalDateTime dateTime;
     private final String description;

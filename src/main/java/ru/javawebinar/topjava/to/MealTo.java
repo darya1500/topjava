@@ -2,6 +2,7 @@ package ru.javawebinar.topjava.to;
 
 import java.time.LocalDateTime;
 
+//transfer object, только для отображения на presentation layer
 public class MealTo {
     private final LocalDateTime dateTime;
 
