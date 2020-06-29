@@ -7,7 +7,6 @@ import java.util.EnumSet;
 import java.util.Set;
 import static ru.javawebinar.topjava.util.MealsUtil.DEFAULT_CALORIES_PER_DAY;
 
-
 public class User extends AbstractNamedEntity {
     private String email;
     private String password;
@@ -23,19 +22,20 @@ public class User extends AbstractNamedEntity {
         this(u.getId(), u.getName(), u.getEmail(), u.getPassword(), u.getCaloriesPerDay(), u.isEnabled(), u.getRegistered(), u.getRoles());
     }
 
+
     public User(Integer id, String name, String email, String password, Role role, Role... roles) {
         this(id, name, email, password, DEFAULT_CALORIES_PER_DAY, true, new Date(), EnumSet.of(role, roles));
     }
 
-    public User(Integer id, String name, String email, String password, int caloriesPerDay, boolean enabled, Date registered, Collection<Role> roles) {
-        super(id, name);
-        this.email = email;
-        this.password = password;
-        this.caloriesPerDay = caloriesPerDay;
-        this.enabled = enabled;
-        this.registered = registered;
-        setRoles(roles);
-    }
+     public User(Integer id, String name, String email, String password, int caloriesPerDay, boolean enabled, Date registered, Collection<Role> roles) {
+            super(id, name);
+            this.email = email;
+            this.password = password;
+            this.caloriesPerDay = caloriesPerDay;
+            this.enabled = enabled;
+            this.registered = registered;
+            setRoles(roles);
+        }
 
     public String getEmail() {
         return email;
@@ -85,6 +85,7 @@ public class User extends AbstractNamedEntity {
         this.roles = CollectionUtils.isEmpty(roles) ? EnumSet.noneOf(Role.class) : EnumSet.copyOf(roles);
     }
 
+
     @Override
     public String toString() {
         return "User{" +
@@ -94,6 +95,6 @@ public class User extends AbstractNamedEntity {
                 ", enabled=" + enabled +
                 ", roles=" + roles +
                 ", caloriesPerDay=" + caloriesPerDay +
-                '}';
+        '}';
     }
 }
