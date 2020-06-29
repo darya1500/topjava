@@ -39,6 +39,15 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
+            <!--maven-surefire-plugin - плагин который запускает тесты и генерирует отчёты по
+            результатам их выполнения. По умолчанию отчёты сохраняются в ${basedir}/target/surefire-reports
+            и находятся в двух форматах - txt и xml. maven-surefire-plugin содержит единственную цель
+            surefire:test тесты можно писать используя как JUnit так и TestNG.
+            по умолчанию запускаются все тесты с такими именами * "**/Test*.java" - включает все java
+            файлы которые начинаются с "Test" и расположены в поддиректориях. * "**/*Test.java" - включает
+            все java файлы которые заканчиваются на "Test" и расположены в
+            поддиректориях. * "**/*TestCase.java" - включает все java файлы которые заканчиваются на
+             "TestCase" и расположены в поддиректориях.-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -93,12 +102,10 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <!--Test-->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
