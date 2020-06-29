@@ -34,6 +34,7 @@ public class JdbcUserRepository implements UserRepository {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
+    //save и update
     @Override
     public User save(User user) {
         MapSqlParameterSource map = new MapSqlParameterSource()
