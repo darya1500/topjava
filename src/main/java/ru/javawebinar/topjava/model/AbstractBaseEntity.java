@@ -3,6 +3,7 @@ package ru.javawebinar.topjava.model;
 //хранить primary key
 public abstract class AbstractBaseEntity {
     public static final int START_SEQ = 100000;
+    public static final int START_MEAL_SEQ = 1000;
 
     protected Integer id;
 
