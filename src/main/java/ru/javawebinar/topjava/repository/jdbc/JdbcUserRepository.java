@@ -15,13 +15,9 @@ import java.util.List;
 
 @Repository
 public class JdbcUserRepository implements UserRepository {
-
     private static final BeanPropertyRowMapper<User> ROW_MAPPER = BeanPropertyRowMapper.newInstance(User.class);
-
     private final JdbcTemplate jdbcTemplate;
-
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-
     private final SimpleJdbcInsert insertUser;
 
     @Autowired
@@ -34,7 +30,7 @@ public class JdbcUserRepository implements UserRepository {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
-    //save и update
+    //save and update
     @Override
     public User save(User user) {
         MapSqlParameterSource map = new MapSqlParameterSource()
