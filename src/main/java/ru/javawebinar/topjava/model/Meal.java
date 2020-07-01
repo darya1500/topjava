@@ -7,9 +7,12 @@ import java.time.LocalTime;
 //model-объекты, с которыми работает приложение пока они находятся в памяти,
 //затем мы их будем хранить в БД
 public class Meal extends AbstractBaseEntity {
-    private final LocalDateTime dateTime;
-    private final String description;
-    private final int calories;
+    private LocalDateTime dateTime;
+    private String description;
+    private int calories;
+
+    public Meal() {
+    }
 
     public Meal(LocalDateTime dateTime, String description, int calories) {
         this(null, dateTime, description, calories);
@@ -36,6 +39,18 @@ public class Meal extends AbstractBaseEntity {
     }
     public LocalTime getTime() {
         return dateTime.toLocalTime();
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
     @Override
