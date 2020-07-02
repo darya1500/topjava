@@ -41,15 +41,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <!--maven-surefire-plugin - плагин который запускает тесты и генерирует отчёты по
-            результатам их выполнения. По умолчанию отчёты сохраняются в ${basedir}/target/surefire-reports
-            и находятся в двух форматах - txt и xml. maven-surefire-plugin содержит единственную цель
-            surefire:test тесты можно писать используя как JUnit так и TestNG.
-            по умолчанию запускаются все тесты с такими именами * "**/Test*.java" - включает все java
-            файлы которые начинаются с "Test" и расположены в поддиректориях. * "**/*Test.java" - включает
-            все java файлы которые заканчиваются на "Test" и расположены в
-            поддиректориях. * "**/*TestCase.java" - включает все java файлы которые заканчиваются на
-             "TestCase" и расположены в поддиректориях.-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -92,7 +83,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
+            <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
         </dependency>
 
@@ -102,6 +93,32 @@
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.3.4</version>
+        </dependency>
+
+
+        <!--- ORM -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+        </dependency>
+
+        <!--http://hibernate.org/validator/documentation/getting-started/#unified-expression-language-el-->
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>${javax-el.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!--Web-->
         <dependency>
@@ -110,16 +127,13 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>jsr250-api</artifactId>
-            <version>1.0</version>
-        </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+
         <!--Test-->
         <dependency>
             <groupId>junit</groupId>
@@ -133,7 +147,17 @@
             <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
+    <profiles>
+    </profiles>
+
     <dependencyManagement>
     </dependencyManagement>
 </project>

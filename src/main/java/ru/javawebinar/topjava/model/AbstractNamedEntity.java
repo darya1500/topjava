@@ -1,6 +1,12 @@
 package ru.javawebinar.topjava.model;
 
-//сущность, у которой есть имя
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+
+@MappedSuperclass
 public abstract class AbstractNamedEntity extends AbstractBaseEntity {
 
     protected String name;
