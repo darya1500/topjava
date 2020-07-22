@@ -156,11 +156,11 @@
             <scope>test</scope>
         </dependency>
         <!--https://stackoverflow.com/questions/40058001/error-creating-bean-with-name-entitymanagerfactory-defined-in-class-path-resou/40058812#40058812?newreg=651f2608d39147caaacdc9a7bee03ef3-->
-        <dependency>
+      <!--  <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.0</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <profiles>
